@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CboService {
+OnlineJsonServer = `https://my-json-server.typicode.com/enamulcs00/cboJsonFile/Employee`
+AnotherServer = `https://my-json-server.typicode.com/enamulcs00/cboJsonFile/db`
 
   constructor(private _httpMethods:HttpClient) { }
 
@@ -18,8 +20,8 @@ export class CboService {
   deleteUser(user){
     return this._httpMethods.delete("http://localhost:3000/Employee/"+user.id);
   }
-  updateUser(user){
-    return this._httpMethods.put("http://localhost:3000/Employee/"+user.id,user);
+  updateUser(id,user){
+    return this._httpMethods.put("http://localhost:3000/Employee/"+id,user);
   }
   getToday(): string {
      return new Date().toISOString().split('T')[0]

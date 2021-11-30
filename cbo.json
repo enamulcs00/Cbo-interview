@@ -3,7 +3,7 @@
     {
       "empCode": "Enam56",
       "empName": "Enamul",
-      "address": "Mohali",
+      "address": "Bihar",
       "mobile": "89456678873",
       "dob": "2021-11-07",
       "remark": "Gopalganj",
@@ -17,6 +17,42 @@
       "dob": "2021-11-11",
       "remark": "Delhi CGO",
       "id": 2
+    },
+    {
+      "empCode": "Enam",
+      "empName": "Enam",
+      "address": "Enam",
+      "mobile": "89566666",
+      "dob": "2021-11-10",
+      "remark": "Haque",
+      "id": 3
+    },
+    {
+      "empCode": "haque22",
+      "empName": "77777777",
+      "address": "mmmmmmmm",
+      "mobile": "6767677",
+      "dob": "2021-11-19",
+      "remark": "jjasjdsk thtytytyty",
+      "id": 4
+    },
+    {
+      "empCode": "bjhgj,",
+      "empName": "777",
+      "address": "hhhhhhh",
+      "mobile": "66666666",
+      "dob": "2021-11-20",
+      "remark": "jh.jh.hhk",
+      "id": 5
+    },
+    {
+      "empCode": "vjhh",
+      "empName": "jhjhjhj",
+      "address": "jhggghg",
+      "mobile": "8888888",
+      "dob": "2021-11-19",
+      "remark": "tyrfyku",
+      "id": 6
     }
   ]
 }

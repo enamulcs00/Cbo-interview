@@ -13,13 +13,7 @@ export class AppComponent implements OnInit{
   CboEmployeeForm:FormGroup
   searchText=''
   isEdit= false;
-  userObj={
-    Name:'',
-    password:'',
-    email:'',
-    mobile:'',
-    id:''
-  }
+  userObj:any
   constructor(public _service:CboService,private CboFb:FormBuilder) {
     this.CboEmployeeForm = this.CboFb.group({
       empCode:['',Validators.required],
@@ -56,15 +50,17 @@ DeleteUser(user){
   })
 }
 EditUser(user){
+  console.log(user);
+  this.userObj = user.id
   this.isEdit= true
   this.CboEmployeeForm.patchValue(user)
   }
 updateUser(){
   if(this.CboEmployeeForm.valid){
-    this.isEdit= !this.isEdit
-  this._service.updateUser(this.userObj).subscribe((res)=>{
-    this.getCurrentUser();
-this.CboEmployeeForm.reset()
+   this._service.updateUser(this.userObj,this.CboEmployeeForm.value).subscribe((res)=>{
+   this.getCurrentUser();
+   this.CboEmployeeForm.reset()
+   this.isEdit= !this.isEdit
   })
   }else{this.CboEmployeeForm.markAllAsTouched()}
   }
