@@ -1,15 +1,6 @@
 {
   "Employee": [
     {
-      "empCode": "Enam56",
-      "empName": "Enamul",
-      "address": "Bihar",
-      "mobile": "89456678873",
-      "dob": "2021-11-07",
-      "remark": "Gopalganj",
-      "id": 1
-    },
-    {
       "empCode": "Mohal54",
       "empName": "Mohal CBO",
       "address": "Mohali",
@@ -46,13 +37,31 @@
       "id": 5
     },
     {
-      "empCode": "vjhh",
-      "empName": "jhjhjhj",
-      "address": "jhggghg",
-      "mobile": "8888888",
-      "dob": "2021-11-19",
-      "remark": "tyrfyku",
+      "empCode": "Enam",
+      "empName": "111111111qqwwqww",
+      "address": "Enam",
+      "mobile": "89566666",
+      "dob": "2021-11-10",
+      "remark": "Haque",
       "id": 6
+    },
+    {
+      "empCode": "Enam",
+      "empName": "Enam22222222222",
+      "address": "Enam",
+      "mobile": "89566666",
+      "dob": "2021-11-10",
+      "remark": "Haque",
+      "id": 7
+    },
+    {
+      "empCode": "101",
+      "empName": "111",
+      "address": "111222hh",
+      "mobile": "8888888888",
+      "dob": "2021-11-30",
+      "remark": "sssss",
+      "id": 8
     }
   ]
 }

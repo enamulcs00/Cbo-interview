@@ -9,11 +9,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit{
   allUsers:any = []
+  EmpCodes = []
   totalEmployee
+  IsEmpduplicate:boolean = false
   CboEmployeeForm:FormGroup
   searchText=''
   isEdit= false;
   userObj:any
+  Disable: boolean;
   constructor(public _service:CboService,private CboFb:FormBuilder) {
     this.CboEmployeeForm = this.CboFb.group({
       empCode:['',Validators.required],
@@ -42,12 +45,18 @@ getCurrentUser() {
   this._service.getAllUser().subscribe((response:any)=>{
     console.log('Get',response);
   this.allUsers= response;
+  for(let x of this.allUsers){
+this.EmpCodes.push(x.empCode)
+  }
   })
 }
 DeleteUser(user){
-  this._service.deleteUser(user).subscribe(()=>{
-    this.getCurrentUser();
-  })
+  if(confirm('Are you sure')){
+    this._service.deleteUser(user).subscribe(()=>{
+      this.getCurrentUser();
+    })
+  }
+
 }
 EditUser(user){
   console.log(user);
@@ -63,5 +72,23 @@ updateUser(){
    this.isEdit= !this.isEdit
   })
   }else{this.CboEmployeeForm.markAllAsTouched()}
+  }
+  EmpCodeValue(e){
+   this.IsEmpduplicate = this.EmpCodes.includes(e)
+   let SomeObj = this.allUsers.find(el=>(el.empCode===e))
+   if(this.IsEmpduplicate){
+     this.userObj = SomeObj.id
+     this.Disable = true
+this.CboEmployeeForm.patchValue(SomeObj)
+this.isEdit = true
+   }else {
+     this.CboEmployeeForm.patchValue({
+     empName :'',
+     mobile :'',
+     address :'',
+     remark :'',
+     dob :''
+     })
+   }
   }
 }

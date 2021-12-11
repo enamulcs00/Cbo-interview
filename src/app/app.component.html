@@ -8,10 +8,13 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="exampleInputEmail1">Emp Code</label>
-        <input type="text" class="form-control" formControlName="empCode" >
+        <input type="text" class="form-control" id="exampleInputEmail1" formControlName="empCode" (input)="EmpCodeValue(CboEmployeeForm.value.empCode)" >
         <div class="invalid-feedback" *ngIf="CboEmployeeForm.get('empCode').hasError('required') && CboEmployeeForm.get('empCode').touched">
           Please enter employee code.
         </div>
+        <!-- <div class="invalid-feedback" *ngIf="IsEmpduplicate">
+          This employee code already exist.
+        </div> -->
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Emp Name</label>
@@ -68,7 +71,7 @@
 
   <div class="search-cboItem">
     <h5>Total Employee:
-      <span class="badge badge-light">{{"   "+allUsers.length}}</span>
+      <span class="badge badge-primary">{{"   "+allUsers.length}}</span>
     </h5>
     <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching">
   </div>
